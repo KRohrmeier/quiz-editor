@@ -17,4 +17,8 @@ export class AppComponent {
   increaseWidth = () => {
     this.myWidth *= 1.5;
   }
+
+  get listBackgroundColorClass() {
+    return this.myWidth > 250 ? "bg-danger" : "";
+  }
 }
