@@ -11,8 +11,8 @@ export class QuizService {
     // REST endpoint, or web service call...
     return [
       { name: 'Quiz 1', numberOfQuestions: 3}
-      , { name: 'Quiz 2', numberOfQuestions: 3}
-      , { name: 'Quiz 3', numberOfQuestions: 3}
+      , { name: 'Quiz 2', numberOfQuestions: 2}
+      , { name: 'Quiz 3', numberOfQuestions: 7}
 
     ];
   }

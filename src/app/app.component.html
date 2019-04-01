@@ -4,6 +4,7 @@
       <div class="list-group">
         <div class="list-group-item list-group-item-action" *ngFor="let q of quizzes">
           {{q.name}}
+          <span class="badge badge-secondary">{{ q.numberOfQuestions }}</span>
         </div>
       </div>
     </div>
