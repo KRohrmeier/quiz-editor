@@ -8,10 +8,16 @@ import { QuizService } from './quiz.service';
 })
 export class AppComponent {
 
-  constructor(private quizSvc: QuizService) {
-    console.log(this.quizSvc.getQuizzes());  
-  }
+  quizzes = [];
 
+  constructor(private quizSvc: QuizService) {
+     
+    this.quizzes = this.quizSvc.getQuizzes();
+    // troubleshooting output
+    console.log(this.quizzes);
+
+  }
+  
   
   title = 'Quiz Editor';
   myWidth = 300;
@@ -25,7 +31,6 @@ export class AppComponent {
     return this.myWidth > 250 ? "pink" : "black";
   } 
   
-
   increaseWidth = () => this.myWidth *= 1.2;
 
   reduceWidth = () => this.myWidth *= .8;

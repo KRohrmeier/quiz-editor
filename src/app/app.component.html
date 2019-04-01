@@ -1,7 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      Quiz List
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" 
+             *ngFor="let q of quizzes">{{ q.name }} 
+          <span 
+            class="badge badge-secondary"
+            [class.bg-danger]="q.numberOfQuestions === 0">
+            {{ q.numberOfQuestions }}</span>
+        </div>
+      </div>
     </div>
     <div class="col-md-8">
       Quiz Details
