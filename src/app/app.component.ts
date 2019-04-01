@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'quiz-editor';
-  titleColor = 'pink';
+  imageWidth = 200;
+  get titleColor() {
+    return this.imageWidth > 250 ? '#dd0031' : 'black';
+  }
+
+  increaseWidth = () => {
+    this.imageWidth *= 1.5;
+  }
 }
