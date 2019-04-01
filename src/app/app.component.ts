@@ -12,11 +12,14 @@ export class AppComponent {
    *
    */
   constructor(private quiz_svc: QuizService) {
-    console.log(this.quiz_svc.getQuizzes);
+    console.log(this.quiz_svc.getQuizzes());
+    this.quizzes = this.quiz_svc.getQuizzes();
   }
 
   title = 'quiz-editor';
   myWidth = 250;
+
+  quizzes = []
 
   get titleColor(){
     return "indianred";
