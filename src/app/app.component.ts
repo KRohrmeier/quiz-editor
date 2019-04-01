@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { QuizService } from './quiz.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  /**
+   *
+   */
+  constructor(private quiz_svc: QuizService) {
+    console.log(this.quiz_svc.getQuizzes);
+  }
+
   title = 'quiz-editor';
-  titleColor = "indianred"
+  myWidth = 250;
+
+  get titleColor(){
+    return "indianred";
+  }
+
+  get listBackgroundColor(){
+    return this.myWidth > 100 ? true : false;
+  }
+
+  increaseWidth = () => {
+    this.myWidth = (this.myWidth + 2) % 250;
+  }
+
 }
