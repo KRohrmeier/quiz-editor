@@ -6,11 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'quiz-editor';
+  title = 'Quiz Editor';
   myWidth = 300;
+  
+  get listBackgroundColorDanger() {
+    return this.myWidth > 300 ? true : false;
+  }
 
   get titleColor() {
-    
+
     return this.myWidth > 250 ? "pink" : "black";
   } 
   
