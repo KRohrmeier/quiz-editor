@@ -20,7 +20,7 @@ export class QuizService {
       },
       {
         name: 'Quiz 3',
-        numberofquestions: 5
+        numberofquestions: 0
       }
     ];
   }
