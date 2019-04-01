@@ -9,13 +9,13 @@ export class AppComponent {
   title = 'quiz-editor';
   // titleColor = "pink";
   
-  myWidth = 280;
+  myWidth = 100;
 
   get titleColor() {
     return this.myWidth > 250 ? "pink" : "black";
   }
 
   increaseWidth = () => {
-    this.myWidth *= 2.2;
+    this.myWidth *= 1.5;
   }
 }
