@@ -17,4 +17,8 @@ export class AppComponent {
   get titleColor(){
     return this.myWidth > 250 ? "brown" : "black";
   }
+
+  get listBackgroundColorDanger() {
+    return this.myWidth > 250 ? true : false; 
+  }
     }
