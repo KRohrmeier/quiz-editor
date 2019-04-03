@@ -7,7 +7,9 @@
       <br>
       <div class="list-group">
         <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-        *ngFor="let q of quizzes">
+        *ngFor="let q of quizzes"
+        (click)="setSelectedQuiz(q)"
+        [class.active]="selectedQuiz === q">
           {{ q.name }}
           <span
             class="badge badge-secondary"
@@ -26,14 +28,14 @@
       <div class="card">
         <div class="card-header">General</div>
         <div class="card-body">
-          Coming Soon!
+          Coming soon!
         </div>
       </div>
       <br>
       <div class="card">
         <div class="card-header">Questions</div>
         <div class="card-body">
-          Coming Soon!
+          Coming soon!
         </div>
       </div>
       <br>
