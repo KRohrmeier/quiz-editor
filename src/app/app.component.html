@@ -12,11 +12,14 @@
          (click)=setSelectedQuiz(q)
          [class.active]="selectedQuiz === q">
           {{ q.name }}
+          <br>
+          
           <span
             class="badge badge-secondary"
             [class.bg-danger]="q.numberOfQuestion === 0">
               {{ q.numberOfQuestion }}
           </span>
+          
         </div>
       </div>
     </div>
@@ -32,7 +35,14 @@
             <div class="card-header">General</div>
             <div class="card-body">
               <!-- Coming Soon! -->
-              {{selectedQuiz.name}}
+              <!-- {{selectedQuiz.name}} -->
+              <br>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text">Quiz Title</span>
+                  </div>
+                  <input type="text" class="form-control" [(ngModel)]="selectedQuiz.name">
+              </div>
             </div>
           </div>
     
