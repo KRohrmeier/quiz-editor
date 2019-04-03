@@ -12,15 +12,15 @@ export class QuizService {
     return [
       {
         name: 'Quiz 1',
-        numberofquestions: 3
+        numberOfQuestions: 3
       },
       {
         name: 'Quiz 2',
-        numberofquestions: 8
+        numberOfQuestions: 8
       },
       {
         name: 'Quiz 3',
-        numberofquestions: 0
+        numberOfQuestions: 0
       }
     ];
   }
