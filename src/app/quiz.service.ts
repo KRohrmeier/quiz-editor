@@ -7,12 +7,14 @@ export class QuizService {
 
   constructor() { }
 
-  getQuizzes()
-  {
+  getQuizzes() {
+
+    // Mocking up the data we will ultimately get from a
+    // REST endpoint, or web service call...
     return [
-      {name: 'quiz 1', numQuestions: 3},
-      {name: 'quiz 2', numQuestions: 0},
-      {name: 'quiz 3', numQuestions: 0}
+      { name: 'Quiz 1', numberOfQuestions: 3 }
+      , { name: 'Quiz 2', numberOfQuestions: 0 }
+      , { name: 'Quiz 3', numberOfQuestions: 0 }
     ];
   }
 }

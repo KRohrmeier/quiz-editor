@@ -8,29 +8,26 @@ import { QuizService } from './quiz.service';
 })
 export class AppComponent {
 
-  /**
-   *
-   */
-  constructor(private quiz_svc: QuizService) {
-    console.log(this.quiz_svc.getQuizzes());
-    this.quizzes = this.quiz_svc.getQuizzes();
+  constructor(private quizSvc: QuizService) {
+    //console.log(this.quizSvc.getQuizzes());
+    this.quizzes = this.quizSvc.getQuizzes();
   }
 
   title = 'quiz-editor';
+
   myWidth = 250;
 
-  quizzes = []
+  quizzes = [];
 
-  get titleColor(){
-    return "indianred";
-  }
-
-  get listBackgroundColor(){
-    return this.myWidth > 100 ? true : false;
+  get titleColor() {
+    return this.myWidth > 250 ? "pink" : "black";
   }
 
   increaseWidth = () => {
-    this.myWidth = (this.myWidth + 2) % 250;
+    this.myWidth *= 1.5;
   }
 
+  get listBackgroundColorDanger() {
+    return this.myWidth > 250 ? true : false;
+  }
 }
