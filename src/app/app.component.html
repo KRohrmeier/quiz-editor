@@ -22,31 +22,36 @@
       </div>
     </div>
     <div class="col-md-8">
-      <br />
-      <button class="btn btn-outline-success">Save</button>
-      <button class="btn btn-link">Cancel</button>
-      <br />
-      <br />
-      <div class="card">
-        <div class="card-header">General</div>
-        <div class="card-body">{{ selectedQuiz.name }}</div>
-      </div>
-          <br />
-          <div class="card">
-            <div class="card-header">Questions</div>
-            <div class="card-body">Coming Soon!</div>
-          </div>
-      
-      
-          <br />
-          <div class="card">
-            <div class="card-header">Other Actions</div>
+      <div *ngIf="selectedQuiz">
+        <br />
+        <button class="btn btn-outline-success">Save</button>
+        <button class="btn btn-link">Cancel</button>
+        <br />
+        <br />
+        <div class="card">
+          <div class="card-header">General</div>
+          <div class="card-body">{{ selectedQuiz.name }}</div>
+        </div>
+
             <br />
-            <div class="card-body">
-            <button class="btn btn-outline-danger">Delete This Quiz</button>
-          </div>
-          </div>
+            <div class="card">
+              <div class="card-header">Questions</div>
+              <div class="card-body">Coming Soon!</div>
+            </div>
         
+            <br />
+            <div class="card">
+              <div class="card-header">Other Actions</div>
+              <br />
+              <div class="card-body">
+              <button class="btn btn-outline-danger">Delete This Quiz</button>
+            </div>
+            </div>
+      </div> <!-- END *ngIf="selectedQuiz" -->
+      <div *ngIf="!selectedQuiz">
+          <br />
+        <h4 class="">Select of Add a new Quiz to get started</h4>
+      </div>
     </div>
   </div>
 </div>
