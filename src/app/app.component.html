@@ -1,26 +1,27 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <br>
-      <button class="btn btn-outline-primary">Add New Quiz</button>
-      <br>
-      <br>
-      <div class="list-group">
-        <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-        *ngFor="let q of quizzes"
-        (click)="setSelectedQuiz(q)"
-        [class.active]="selectedQuiz === q">
-          {{ q.name }}
-          <span
-            class="badge badge-secondary"
-            [class.bg-danger]="q.numberOfQuestions === 0">
-              {{ q.numberOfQuestions }}
-          </span>
+    <div class="row">
+      <div class="col-md-4">
+        <br>
+        <button class="btn btn-outline-primary">Add New Quiz</button>
+        <br>
+        <br>
+        <div class="list-group">
+          <div 
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" 
+            *ngFor="let q of quizzes"
+            (click)="setSelectedQuiz(q)"
+            [class.active]="selectedQuiz === q">
+              {{ q.name }}
+              <span 
+                class="badge badge-secondary"
+                [class.bg-danger]="q.numberOfQuestions === 0">
+                  {{ q.numberOfQuestions }}
+              </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-8">
-      <div *ngIf="selectedQuiz">
+      <div class="col-md-8">
+        <div *ngIf="selectedQuiz">
           <br>
           <button class="btn btn-outline-success">Save</button>
           <button class="btn btn-link">Cancel</button>
@@ -29,7 +30,7 @@
           <div class="card">
             <div class="card-header">General</div>
             <div class="card-body">
-              {{ selectedQuiz.q }}
+              {{ selectedQuiz.name }}
             </div>
           </div>
           <br>
@@ -45,9 +46,22 @@
             <div class="card-body">
               <button class="btn btn-outline-danger">Delete This Quiz</button>
             </div>
+          </div>    
+        </div>
+        <div *ngIf="!selectedQuiz">
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="card">
+            <div class="card-header">&nbsp;</div>
+            <div class="card-body">
+              <h5>Select or add a new quiz to get started...</h5>
+            </div>
           </div>
         </div>
-        <div *ngIf="!selectedQuiz"></div>
       </div>
     </div>
-</div>
+  </div>
+  
+  
