@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { QuizService } from './quiz.service';
 
+interface QuizDisplay {
+  name: string;
+  numberOfQuestions: number;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,9 +14,8 @@ import { QuizService } from './quiz.service';
 export class AppComponent {
 
   constructor(private quizSvc: QuizService) {
-    
-    // console.log(this.quizSvc.getQuizzes());
 
+    // console.log(this.quizSvc.getQuizzes());
     this.quizzes = this.quizSvc.getQuizzes();
 
   }
@@ -20,7 +24,7 @@ export class AppComponent {
 
   myWidth = 250;
 
-  quizzes = [];
+  quizzes: QuizDisplay[] = [];
 
   get titleColor() {
     return this.myWidth > 250 ? "pink" : "black";
