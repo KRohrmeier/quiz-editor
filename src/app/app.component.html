@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4">
       <br>
-      <button class="btn btn-outline-primary">Add New Quiz</button>
+      <button class="btn btn-outline-primary" (click)="addNewQuiz()">Add New Quiz</button>
       <br>
       <br>
       <div class="list-group">
@@ -21,29 +21,43 @@
       </div>
     </div>
     <div class="col-md-8">
-      <br>
-      <button class="btn btn-outline-success">Save</button>
-      <button class="btn btn-link">Cancel</button>
-      <br>
-      <br>
-      <div class="card">
-        <div class="card-header">General</div>
-        <div class="card-body">
-          {{ selectedQuiz.name }}
+      <div *ngIf="selectedQuiz">
+        <br>
+        <button class="btn btn-outline-success">Save</button>
+        <button class="btn btn-link">Cancel</button>
+        <br>
+        <br>
+        <div class="card">
+          <div class="card-header">General</div>
+          <div class="card-body">
+            {{ selectedQuiz.name }}
+          </div>
         </div>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-header">Questions</div>
-        <div class="card-body">
-          Coming soon!
+        <br>
+        <div class="card">
+          <div class="card-header">Questions</div>
+          <div class="card-body">
+            Coming soon!
+          </div>
         </div>
+        <br>
+        <div class="card">
+          <div class="card-header">Other</div>
+          <div class="card-body">
+            <button class="btn btn-outline-danger">Delete This Quiz</button>
+          </div>
+        </div>    
       </div>
-      <br>
-      <div class="card">
-        <div class="card-header">Other</div>
-        <div class="card-body">
-          <button class="btn btn-outline-danger">Delete This Quiz</button>
+      <div *ngIf="!selectedQuiz">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="card">
+          <div class="card-header">&nbsp;</div>
+          <div class="card-body">
+            <h5>Select or <button class="btn btn-outline-secondary" (click)="addNewQuiz()">Add a New Quiz</button> to get started...</h5>
+          </div>
         </div>
       </div>
     </div>
