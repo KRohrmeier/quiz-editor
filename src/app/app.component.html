@@ -31,7 +31,7 @@
         <div class="card">
           <div class="card-header">General</div>
           <div class="card-body">
-            {{ selectedQuiz.name }}
+            title: <input type="text" placeholder="{{ selectedQuiz.name }}" [(ngModel)]="selectedQuiz.name">
           </div>
         </div>
         <br>
@@ -41,7 +41,7 @@
             Coming soon!
           </div>
         </div>
-        <br>
+        <br />
         <div class="card">
           <div class="card-header">Other</div>
           <div class="card-body">
