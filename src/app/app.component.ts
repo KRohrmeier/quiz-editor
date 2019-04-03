@@ -28,6 +28,13 @@ export class AppComponent {
   setSelectedQuiz(q: QuizDisplay) {
     this.selectedQuiz = q;
   }
+  
+  addNewQuiz() {
+    let newQuiz = {name: 'New Untitled Quiz', numberOfQuestions: 0};
+    this.quizzes = [...this.quizzes, newQuiz];
+
+    this.selectedQuiz = newQuiz;
+  }
 
   get titleColor() {
     return this.myWidth > 250 ? "pink" : "black";
