@@ -14,14 +14,12 @@ interface QuizDisplay {
 export class AppComponent {
 
   constructor(private quizSvc: QuizService) {
-
-    // console.log(this.quizSvc.getQuizzes());
+    //console.log(this.quizSvc.getQuizzes());
     this.quizzes = this.quizSvc.getQuizzes();
-
   }
 
   title = 'quiz-editor';
-
+  
   myWidth = 250;
 
   quizzes: QuizDisplay[] = [];
@@ -33,14 +31,22 @@ export class AppComponent {
 
   get titleColor() {
     return this.myWidth > 250 ? "pink" : "black";
-  }
-
+  }  
 
   increaseWidth = () => {
     this.myWidth *= 1.5;
   }
 
-  get listBackgroundColorClass() {
-    return this.myWidth > 250 ? "bg-danger" : "";
+  get listBackgroundColorDanger() {
+    return this.myWidth > 250 ? true : false;
+  }
+
+  addNewQuiz() {
+    let newQuiz = {
+      name: 'New Untitled Quiz'
+      , numberOfQuestions: 0
+    };
+
+    this.quizzes = [...this.quizzes, newQuiz];
   }
 }
