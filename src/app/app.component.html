@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4">
       <br>
-        <button class="btn btn-outline-primary">Add New Quiz</button>
+        <button class="btn btn-outline-primary" (click)="addNewQuiz()">Add New Quiz</button>
       <br>
       <br>
       <div class="list-group-item">
@@ -61,7 +61,7 @@
         <br>
         <div class="card">
           <div class="card-header">Welcome!</div>
-          <div class="card-body">Select a quiz to get started</div>
+          <div class="card-body">Select or <button class="btn btn-outline-secondary" (click)='addNewQuiz()'>add a new quiz </button> to get started</div>
         </div>
       </div>
     </div>
