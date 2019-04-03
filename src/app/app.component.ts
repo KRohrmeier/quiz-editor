@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { QuizService } from './quiz.service';
 
+interface QuizDisplay {
+  
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
