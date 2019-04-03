@@ -3,7 +3,7 @@
     <div class="col-md-4">
       <h2>Quiz List</h2>
       <br>
-      <button class="btn btn-outline-primary">Add New Quiz</button>
+      <button class="btn btn-outline-primary" (click)="addNewQuiz()">Add New Quiz</button>
       <br>
       <br>
       <div class="list-group">
@@ -50,7 +50,7 @@
         <div class="card">
           <div class="card-header">&nbsp;</div>
           <div class="card-body">
-            <h4>Select or Add A New Quiz To Get Started..</h4>
+            <h4>Select or <button class="btn btn-outline-secondary" (click)="addNewQuiz()">Add A New Quiz</button> To Get Started..</h4>
           </div>
         </div>
       </div>
