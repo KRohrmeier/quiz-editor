@@ -40,4 +40,12 @@ export class AppComponent {
   get listBackgroundColor() {
     return this.myWidth > 250 ? true : false;
   }
+
+  addNewQuiz() {
+    let newQuiz = {
+      name: "New Untitled Quiz", numberOfQuestions: 0};
+
+      this.quizzes = [...this.quizzes, newQuiz];
+      this.selectedQuiz = newQuiz;
+  }
 }
