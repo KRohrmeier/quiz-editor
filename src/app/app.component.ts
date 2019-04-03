@@ -11,6 +11,7 @@ interface QuizDisplay {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'quiz-editor';
   quizzes: QuizDisplay[] = [];
