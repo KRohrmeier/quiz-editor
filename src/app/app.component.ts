@@ -42,7 +42,13 @@ export class AppComponent {
   }
 
   addNewQuiz() {
-    let newQuiz = { name: 'new untitled quiz', numberOfQuestions: 0};
+
+    let newQuiz = { 
+      name: 'New Untitled Quiz'
+      , numberOfQuestions: 0 
+    };
+
     this.quizzes = [...this.quizzes, newQuiz];
+    this.selectedQuiz = newQuiz;
   }
 }
