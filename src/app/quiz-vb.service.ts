@@ -12,6 +12,9 @@ export class QuizVBService {
       {name: "Quiz 1", numberOfQuestion: 3}
       , {name: "Quiz 2", numberOfQuestion: 0}
       , {name: "Quiz 3", numberOfQuestion: 0}
-    ];
+    ].map(x => ({
+        name: x.name
+      , numberOfQuestion: x.numberOfQuestion
+    }));
   }
 }

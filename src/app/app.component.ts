@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { QuizVBService } from './quiz-vb.service';
 
+interface QuizDisplay {
+  name: string;
+  numberOfQuestion: number;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,7 +20,7 @@ export class AppComponent {
 
   title = 'quiz-editor';
   // titleColor = "pink";
-  quizzes = [];
+  quizzes : QuizDisplay[] = [];
   myWidth = 100;
 
   get titleColor() {

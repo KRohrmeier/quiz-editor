@@ -1,7 +1,11 @@
 <div class="conainer">
   <div class="row">
     <div class="col-md-4">
-      <!-- <h2>Quiz List</h2> -->
+      <br>
+      <button class="btn btn-outline-primary">Add New Quiz</button>
+      <br>
+      <br>
+      <h2>Quiz List</h2>
       <div class="list-group">
         <div class="list-group-item list-group-item-action" *ngFor="let q of quizzes">
           {{ q.name }}
@@ -11,6 +15,23 @@
     </div>
     <div class="col-md-8">
       <h2>Quiz Details</h2>
+      <br>
+      <button class="btn btn-outline-success">Save</button>
+      <button class="btn btn-link">Cancel</button>
+      <br>
+      <br>
+      <div class="card">
+        <div class="card-header">General</div>
+        <div class="card-body">
+          Coming Soon!
+        </div>
+      </div>
+      <div class="card">
+        <div class="car-header">Other</div>
+        <div class="card-body">
+          <button class="btn btn-outline-danger">Delete This Quiz</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
