@@ -19,12 +19,15 @@
     </div>
 
     <div class="col-md-8">
-      NIcer
+ 
+      <div *ngIf="selectedQuiz">
+
       <br>
       <button class="btn btn-outline-success">Save</button>
       <button class="btn btn-link">Cancel</button>
       <br>
       <br>
+      
       <div class="card">
         <div class="card-header">
           General
@@ -50,6 +53,17 @@
             <button class="btn btn-outline-danger">Detele quib</button>
           </div>
         </div>
+      </div>
+      <div *ngIf="!selectedQuiz">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="card">
+          <div class="card-header">Welcome!</div>
+          <div class="card-body">Select a quiz to get started</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
