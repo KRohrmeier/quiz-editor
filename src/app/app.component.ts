@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { QuizService } from './quiz.service';
 
 interface QuizDisplay {
-  
+  name: string;
+  numberOfQuestions: number;
 }
 
 @Component({
@@ -21,7 +22,7 @@ export class AppComponent {
   
   myWidth = 250;
 
-  quizzes = [];
+  quizzes: QuizDisplay[] = [];
 
   get titleColor() {
     return this.myWidth > 250 ? "pink" : "black";
