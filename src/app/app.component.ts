@@ -12,10 +12,15 @@ interface QuizDisplay {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'quiz-editor';
+  quizzes: QuizDisplay[] = [];
+  selectedQuiz: QuizDisplay = undefined;
+
   constructor(private quizSvc: QuizService) {
     this.quizzes = this.quizSvc.getQuizzes();
   }
 
-  title = 'quiz-editor';
-  quizzes: QuizDisplay[] = [];
+  setSelectedQuiz(quiz: QuizDisplay) {
+    this.selectedQuiz = quiz;
+  }
 }
