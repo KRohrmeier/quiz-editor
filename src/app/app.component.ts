@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { QuizService } from './quiz.service';
 
+interface QuizDisplay {
+  name: String;
+  numberOfQuestions: number;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,7 +22,7 @@ export class AppComponent {
 
   myWidth = 250;
 
-  quizzes = [];
+  quizzes: QuizDisplay[] = [];
 
   alterWidth = () => {
     this.myWidth *= 1.20;
