@@ -30,6 +30,9 @@
           <div class="card">
             <div class="card-header">General</div>
             <div class="card-body">
+              <label>Name</label>
+              <br>
+              <input type="text" [(ngModel)]="selectedQuiz.name" class="form-control" />
               {{ selectedQuiz.name }}
             </div>
           </div>
@@ -56,7 +59,7 @@
           <div class="card">
             <div class="card-header">&nbsp;</div>
             <div class="card-body">
-              <h5>Select or <button class="btn btn-outline-secondary" (click)="addNewQuiz()">add a new quiz</button> to get started...</h5>
+              <h5>Select or <button class="btn btn-outline-secondary" (click)="addNewQuiz()">Add a New Quiz</button> to get started...</h5>
             </div>
           </div>
         </div>
