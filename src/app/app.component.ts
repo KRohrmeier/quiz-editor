@@ -23,4 +23,11 @@ export class AppComponent {
   setSelectedQuiz(quiz: QuizDisplay) {
     this.selectedQuiz = quiz;
   }
+
+  addNewQuiz() {
+    let newQuiz = { name: 'Untitled Quiz', numberOfQuestions: 0 };
+
+    this.quizzes = [...this.quizzes, newQuiz];
+    this.selectedQuiz = newQuiz;
+  }
 }
