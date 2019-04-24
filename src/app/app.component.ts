@@ -73,8 +73,12 @@ export class AppComponent implements OnInit {
         , originalName : x.originalName
         , question : x.questions
       }));
-      
-    const addedQuizzes = [];
+
+    const addedQuizzes = this.getAddedQuizzes() 
+      .map(x => ({
+        quizName : x.name
+        , quizQuestions : x.questions.map(x => x.name)
+      })); // rebuild checksum?
 
     this.quizSvc.saveQuizzes(editedQuizzes, addedQuizzes).subscribe(
       numberOfEditedQuizzesSaved => console.log(numberOfEditedQuizzesSaved)
@@ -122,7 +126,6 @@ export class AppComponent implements OnInit {
   }
 
   addNewQuiz() {
-
     let newQuiz = { 
       name: 'New Untitled Quiz'
       , originalName: 'New Untitled Quiz'
@@ -167,10 +170,14 @@ export class AppComponent implements OnInit {
   }
 
   get numberOfAddedQuizzes() {
+    return this.getAddedQuizzes().length;
+  }
+
+  getAddedQuizzes() {
     return this.quizzes
       .filter(x => 
       !x.markedForDelete
-      && x.originalName === 'New Untitled Quiz').length;
+      && x.originalName === 'New Untitled Quiz');
   }
 
   /* animation properties and methods */
