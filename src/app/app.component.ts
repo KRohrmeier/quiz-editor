@@ -61,11 +61,27 @@ export class AppComponent implements OnInit {
   }
 
   title = 'quiz-editor';
-  
   myWidth = 250;
 
   quizzes: QuizDisplay[] = [];
   selectedQuiz: QuizDisplay = undefined;
+
+  saveBatchEdits() {
+    const editedQuizzes = this.getEditedQuizzes()
+      .map(x => ({
+        name : x.name
+        , originalName : x.originalName
+        , question : x.questions
+      }));
+      
+    const addedQuizzes = [];
+
+    this.quizSvc.saveQuizzes(editedQuizzes, addedQuizzes).subscribe(
+      numberOfEditedQuizzesSaved => console.log(numberOfEditedQuizzesSaved)
+      , error => console.log(error)
+    );
+    
+  }
 
   cancelBatchEdits() {
     this.loadAllQuizzes();
@@ -139,11 +155,15 @@ export class AppComponent implements OnInit {
   }
 
   get numberOfEditedQuizzes() {
+    return this.getEditedQuizzes().length;
+  }
+
+  getEditedQuizzes() {
     return this.quizzes
     .filter(x => 
       (!x.markedForDelete && x.originalName !== 'New Untitled Quiz')
       && (x.name != x.originalName || x.originalQuestionsChecksum != x.questions.map(x => x.name).join('~'))
-    ).length;
+    );
   }
 
   get numberOfAddedQuizzes() {
